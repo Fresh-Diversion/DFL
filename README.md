@@ -94,5 +94,5 @@ From it, copy both `pretrain_CelebA` and `pretrain_Quick96` to the directory `De
 
 
 ## Step #4: Navigate to the scripts directory and begin using DeepFaceLab
-(Further guide coming soon!)
+(Further guide coming soon!)  
 https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended
