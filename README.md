@@ -164,8 +164,10 @@ This will create/clear the workspace folder - only use this at the beginning of 
 
 the folder should look like this:
 |-- workspace        
-|   |-- data_dst  
+|   |-- data_dst 
+|       |--aligned  
 |   |-- data_src  
+|       |--aligned  
 |   |-- model  
 |   -- data_dst.mp4  
 |   -- data_src.mp4  
