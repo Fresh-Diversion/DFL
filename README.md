@@ -159,7 +159,19 @@ cd ~/DeepFaceLab_NVIDIA_Linux/scripts
 
 run the scripts in this order
 Set up  
-1_clear_workspace.sh  
+This will create/clear the workspace folder - only use this at the beginning of the process.
+./1_clear_workspace.sh  
+
+the folder should look like this:
+|-- workspace        
+|   |-- data_dst  
+|   |-- data_src  
+|   |-- model  
+|   -- data_dst.mp4  
+|   -- data_src.mp4  
+
+
+Move the data_src.mp4 and data_dst.mp4 files into the workspace folder  
 
 Extract from source files  
 2_extract_images_from_video_data_src.sh  
