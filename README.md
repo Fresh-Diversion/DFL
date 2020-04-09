@@ -99,65 +99,72 @@ https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutori
   
 Confirm the build directory is set up properly  
   
-There are many scripts. We will choose from each category to execute the extraction/trainging/faking process 
+There are many scripts. We will choose from each category to execute the extraction/trainging/merging process 
   
-The Scripts:
-1_clear_workspace.sh
-2_extract_images_from_video_data_src.sh
-3_cut_video_drop_video_on_me.sh
-3_extract_images_from_video_data_dst_FULL_FPS.sh
-4.2_data_src_sort.sh
-4.2_data_src_util_add_landmarks_debug_images.sh
-4.2_data_src_util_faceset_enhance.sh
-4.2_data_src_util_faceset_metadata_restore.sh
-4.2_data_src_util_faceset_metadata_save.sh
-4.2_data_src_util_faceset_pack.sh
-4.2_data_src_util_faceset_unpack.sh
-4.2_data_src_util_recover_original_filename.sh
-4_data_src_extract_full_face_MANUAL.sh
-4_data_src_extract_full_face_S3FD.sh
-4_data_src_extract_whole_face_MANUAL.sh
-4_data_src_extract_whole_face_S3FD.sh
-5.2_data_dst_sort.sh
-5.2_data_dst_util_faceset_pack.sh
-5.2_data_dst_util_faceset_unpack.sh
-5.2_data_dst_util_recover_original_filename.sh
-5.3_data_dst_mask_editor.sh
-5_data_dst_extract_full_face_MANUAL_RE-EXTRACT_DELETED_ALIGNED_DEBUG.sh
-5_data_dst_extract_full_face_MANUAL.sh
-5_data_dst_extract_full_face_S3FD_+_manual_fix.sh
-5_data_dst_extract_full_face_S3FD.sh
-5_data_dst_extract_whole_face_MANUAL_RE_+_EXTRACT_DELETED_ALIGNED_DEBUG.sh
-5_data_dst_extract_whole_face_MANUAL.sh
-5_data_dst_extract_whole_face_S3FD_+_manual_fix.sh
-5_data_dst_extract_whole_face_S3FD.sh
-5.XSeg_data_dst_edit.sh
-5.XSeg_data_dst_merge.sh
-5.XSeg_data_dst_split.sh
-5.XSeg_data_src_edit.sh
-5.XSeg_data_src_merge.sh
-5.XSeg_data_src_split.sh
-5.XSeg_train.sh
-6_train_Quick96.sh
-6_train_SAEHD.sh
-7_merge_Quick96.sh
-7_merge_SAEHD.sh
-8_merged_to_avi.sh
-8_merged_to_mov_lossless.sh
-8_merged_to_mp4_lossless.sh
-8_merged_to_mp4.sh
-env.sh
+The Scripts: 
+SETUP  
+1_clear_workspace.sh  
 
-Navigate to the DeepFaceLab_NVIDIA_Linux directory 
-cd ~/DeepFaceLab_NVIDIA_Linux 
+EXTRACT:  
+2_extract_images_from_video_data_src.sh  
+3_cut_video_drop_video_on_me.sh  
+3_extract_images_from_video_data_dst_FULL_FPS.sh  
+4.2_data_src_sort.sh  
+4.2_data_src_util_add_landmarks_debug_images.sh  
+4.2_data_src_util_faceset_enhance.sh  
+4.2_data_src_util_faceset_metadata_restore.sh  
+4.2_data_src_util_faceset_metadata_save.sh  
+4.2_data_src_util_faceset_pack.sh  
+4.2_data_src_util_faceset_unpack.sh  
+4.2_data_src_util_recover_original_filename.sh  
+4_data_src_extract_full_face_MANUAL.sh  
+4_data_src_extract_full_face_S3FD.sh  
+4_data_src_extract_whole_face_MANUAL.sh  
+4_data_src_extract_whole_face_S3FD.sh  
+5.2_data_dst_sort.sh  
+5.2_data_dst_util_faceset_pack.sh  
+5.2_data_dst_util_faceset_unpack.sh  
+5.2_data_dst_util_recover_original_filename.sh  
+5.3_data_dst_mask_editor.sh  
+5_data_dst_extract_full_face_MANUAL_RE-EXTRACT_DELETED_ALIGNED_DEBUG.sh  
+5_data_dst_extract_full_face_MANUAL.sh  
+5_data_dst_extract_full_face_S3FD_+_manual_fix.sh  
+5_data_dst_extract_full_face_S3FD.sh  
+5_data_dst_extract_whole_face_MANUAL_RE_+_EXTRACT_DELETED_ALIGNED_DEBUG.sh  
+5_data_dst_extract_whole_face_MANUAL.sh  
+5_data_dst_extract_whole_face_S3FD_+_manual_fix.sh  
+5_data_dst_extract_whole_face_S3FD.sh  
+5.XSeg_data_dst_edit.sh  
+5.XSeg_data_dst_merge.sh  
+5.XSeg_data_dst_split.sh  
+5.XSeg_data_src_edit.sh  
+5.XSeg_data_src_merge.sh  
+5.XSeg_data_src_split.sh  
+5.XSeg_train.sh  
 
+TRAIN:  
+6_train_Quick96.sh  
+6_train_SAEHD.sh  
+
+MERGE:  
+7_merge_Quick96.sh  
+7_merge_SAEHD.sh  
+8_merged_to_avi.sh  
+8_merged_to_mov_lossless.sh  
+8_merged_to_mp4_lossless.sh  
+8_merged_to_mp4.sh  
+env.sh  
+  
+Navigate to the DeepFaceLab_NVIDIA_Linux directory  
+cd ~/DeepFaceLab_NVIDIA_Linux  
+  
 give permissions on the scripts folder(check this)  
 chmod +x scripts -R  
 
-Navigate to the scripts directory 
+Navigate to the scripts directory  
 cd ~/DeepFaceLab_NVIDIA_Linux/scripts  
-
-
+  
+The 3 main steps of creating a deepfake are Extract, Train and Merge 
 run the scripts in this order  
 Set up  
 This will create/clear the workspace folder - only use this at the beginning of the process.  
@@ -178,9 +185,24 @@ the folder should look like this:
 |   -- data_src.mp4  
 ```
   
-Extract from source files  
-2_extract_images_from_video_data_src.sh  
-3_extract_images_from_video_data_dst_FULL_FPS.sh  
+Extract frames from src file  
+The next script has 2 options:  
+A) FPS -> you can choose the FPS. The greater the FPS the more material will be available to work with = longer time  
+B) Output Image Format png/jpg ->  
+
+./2_extract_images_from_video_data_src.sh  
+
+When Finished, the data_src folder should have folder named aligned and the extracted frames from the data_src movie  
+  
+Extract frames from dst file  
+The next script has 1 option:  
+A) Output Image Format png/jpg ->  
+
+./3_extract_images_from_video_data_dst_FULL_FPS.sh 
+  
+When Finished, the data_dst folder should have folder named aligned and the extracted frames from the data_dst movie  
+
+Extract Faces
 4_data_src_extract_full_face_S3FD.sh  
 4.2_data_src_util_add_landmarks_debug_images.sh  
 5_data_dst_extract_full_face_MANUAL_RE-EXTRACT_DELETED_ALIGNED_DEBUG.sh  
