@@ -164,12 +164,13 @@ chmod +x scripts -R
 Navigate to the scripts directory  
 cd ~/DeepFaceLab_NVIDIA_Linux/scripts  
   
-The 3 main steps of creating a deepfake are Extract, Train and Merge 
-run the scripts in this order  
+The 3 main steps of creating a deepfake are Extract, Train and Merge  
+Run the scripts in this order  
 Set up  
 This will create/clear the workspace folder - only use this at the beginning of the process.  
-
+```sh
 ./1_clear_workspace.sh  
+```
   
 Move the data_src.mp4 and data_dst.mp4 files into the workspace folder 
   
