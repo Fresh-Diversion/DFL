@@ -98,6 +98,7 @@ From it, copy both `pretrain_CelebA` and `pretrain_Quick96` to the directory `De
 https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended  
   
 Confirm the build directory is set up properly  
+  
 There are many scripts. We will choose from each category to execute the extraction/trainging/faking process 
   
 The Scripts:
@@ -157,12 +158,15 @@ Navigate to the scripts directory
 cd ~/DeepFaceLab_NVIDIA_Linux/scripts  
 
 
-run the scripts in this order
+run the scripts in this order  
 Set up  
-This will create/clear the workspace folder - only use this at the beginning of the process.
-./1_clear_workspace.sh  
+This will create/clear the workspace folder - only use this at the beginning of the process.  
 
-the folder should look like this:
+./1_clear_workspace.sh  
+  
+Move the data_src.mp4 and data_dst.mp4 files into the workspace folder 
+  
+the folder should look like this:  
 ```bash
 |-- workspace        
 |   |-- data_dst 
@@ -173,14 +177,12 @@ the folder should look like this:
 |   -- data_dst.mp4  
 |   -- data_src.mp4  
 ```
-
-Move the data_src.mp4 and data_dst.mp4 files into the workspace folder  
-
+  
 Extract from source files  
 2_extract_images_from_video_data_src.sh  
 3_extract_images_from_video_data_dst_FULL_FPS.sh  
 4_data_src_extract_full_face_S3FD.sh  
-4.2_data_src_util_add_landmarks_debug_images.sh
+4.2_data_src_util_add_landmarks_debug_images.sh  
 5_data_dst_extract_full_face_MANUAL_RE-EXTRACT_DELETED_ALIGNED_DEBUG.sh  
 5_data_dst_extract_whole_face_S3FD.sh  
 5.2_data_dst_sort.sh  
