@@ -190,24 +190,67 @@ Extract frames from src file
 The next script has 2 options:  
 A) FPS -> you can choose the FPS. The greater the FPS the more material will be available to work with = longer time  
 B) Output Image Format png/jpg ->  
-
+```bash
 ./2_extract_images_from_video_data_src.sh  
-
+```
 When Finished, the data_src folder should have folder named aligned and the extracted frames from the data_src movie  
   
 Extract frames from dst file  
 The next script has 1 option:  
 A) Output Image Format png/jpg ->  
-
+```bash
 ./3_extract_images_from_video_data_dst_FULL_FPS.sh 
-  
+```  
 When Finished, the data_dst folder should have folder named aligned and the extracted frames from the data_dst movie  
 
-Extract Faces
-4_data_src_extract_full_face_S3FD.sh  
+Extract Faces,align the landmarks from the src 
+The next script has 2 options:  
+A)gpu or cpu  
+B)choosing whether to generate "aligned_debug" folder or not. -> I think doing this is a good idea  
+```sh
+./4_data_src_extract_full_face_S3FD.sh
+```
+When finished, the data_src folder should have folder named aligned_debug with the extracted frames from the data_src frames inside. The frames in aligned_debug should have the alignments     
+  
+Clean the source faceset/dataset of false positives/incorrectly aligned faces  
+The next script has 13 options:  
+Choose sorting method:  
+[0] blur  
+[1] face yaw direction  
+[2] face pitch direction  
+[3] face rect size in source image  
+[4] histogram similarity  
+[5] histogram dissimilarity  
+[6] brightness  
+[7] hue  
+[8] amount of black pixels  
+[9] original filename  
+[10] one face in image  
+[11] absolute pixel difference  
+[12] best faces  
+[13] best faces faster  
+
+```sh
+./4.2_data_src_sort.sh
+```
+Choose 4 if you don't know what to choose  
+
+Add land marks to debug images if the option was not chosen before
+```sh
 4.2_data_src_util_add_landmarks_debug_images.sh  
+```
+
+Extract Faces,align the landmarks from the dst  
+The next script has 1 option:  
+A)gpu or cpu  
+
+```sh
+./5_data_dst_extract_whole_face_S3FD.sh
+```
+When finished, the data_dst folder should have folder named aligned with the extracted faces from the data_src frames inside and a folder named aligned_debug. The frames in aligned_debug should have the alignments.  
+
 5_data_dst_extract_full_face_MANUAL_RE-EXTRACT_DELETED_ALIGNED_DEBUG.sh  
-5_data_dst_extract_whole_face_S3FD.sh  
+  
 5.2_data_dst_sort.sh  
 5.2_data_dst_util_recover_original_filename.sh  
   
