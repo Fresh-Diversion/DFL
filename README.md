@@ -247,11 +247,51 @@ A)gpu or cpu
 ```sh
 ./5_data_dst_extract_whole_face_S3FD.sh
 ```
-When finished, the data_dst folder should have folder named aligned with the extracted faces from the data_src frames inside and a folder named aligned_debug. The frames in aligned_debug should have the alignments.  
+When finished, the data_dst folder should have a folder named aligned_debug. The frames in aligned_debug should have the alignments.  
+ 
+Clean the dst faceset/dataset of false positives/incorrectly aligned faces  
+The next script has 13 options:  
+Choose sorting method:  
+[0] blur  
+[1] face yaw direction  
+[2] face pitch direction  
+[3] face rect size in source image  
+[4] histogram similarity  
+[5] histogram dissimilarity  
+[6] brightness  
+[7] hue  
+[8] amount of black pixels  
+[9] original filename  
+[10] one face in image  
+[11] absolute pixel difference  
+[12] best faces  
+[13] best faces faster  
 
-5_data_dst_extract_full_face_MANUAL_RE-EXTRACT_DELETED_ALIGNED_DEBUG.sh  
-  
-5.2_data_dst_sort.sh  
+```sh
+./5.2_data_dst_sort.sh  
+```
+Choose 4 if you don't know what to choose 
+
+When finished, the data_dst folder should have a folder named aligned with the extracted faces from the data_dst frames inside  
+
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+not sure about this:
 5.2_data_dst_util_recover_original_filename.sh  
   
 batch rename for linux  
