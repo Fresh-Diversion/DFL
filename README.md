@@ -163,6 +163,7 @@ This will create/clear the workspace folder - only use this at the beginning of 
 ./1_clear_workspace.sh  
 
 the folder should look like this:
+```bash
 |-- workspace        
 |   |-- data_dst 
 |       |--aligned  
@@ -171,7 +172,7 @@ the folder should look like this:
 |   |-- model  
 |   -- data_dst.mp4  
 |   -- data_src.mp4  
-
+```
 
 Move the data_src.mp4 and data_dst.mp4 files into the workspace folder  
 
