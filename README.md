@@ -155,18 +155,25 @@ MERGE:
 8_merged_to_mp4.sh  
 env.sh  
   
-Navigate to the DeepFaceLab_NVIDIA_Linux directory  
-cd ~/DeepFaceLab_NVIDIA_Linux  
+Navigate to the DeepFaceLab_NVIDIA_Linux directory 
+```sh
+cd ~/DeepFaceLab_NVIDIA_Linux 
+```
   
 give permissions on the scripts folder(check this)  
+```sh
 chmod +x scripts -R  
+```
 
-Navigate to the scripts directory  
-cd ~/DeepFaceLab_NVIDIA_Linux/scripts  
+Navigate to the scripts directory 
+```sh
+cd ~/DeepFaceLab_NVIDIA_Linux/scripts 
+```
   
-The 3 main steps of creating a deepfake are Extract, Train and Merge  
-Run the scripts in this order  
-Set up  
+The 3 main steps of creating a deepfake are Extract, Train, and Merge  
+Run the scripts in this order:  
+
+SET UP  
 This will create/clear the workspace folder - only use this at the beginning of the process.  
 ```sh
 ./1_clear_workspace.sh  
@@ -186,6 +193,8 @@ the folder should look like this:
 |   -- data_src.mp4  
 ```
   
+
+EXTRACT
 Extract frames from src file  
 The next script has 2 options:  
 A) FPS -> you can choose the FPS. The greater the FPS the more material will be available to work with = longer time  
@@ -193,7 +202,7 @@ B) Output Image Format png/jpg ->
 ```bash
 ./2_extract_images_from_video_data_src.sh  
 ```
-When Finished, the data_src folder should have folder named aligned and the extracted frames from the data_src movie  
+When Finished, the data_src folder should have folder named aligned and the extracted frames from the data_src movie together   
   
 Extract frames from dst file  
 The next script has 1 option:  
@@ -201,7 +210,7 @@ A) Output Image Format png/jpg ->
 ```bash
 ./3_extract_images_from_video_data_dst_FULL_FPS.sh 
 ```  
-When Finished, the data_dst folder should have folder named aligned and the extracted frames from the data_dst movie  
+When finished, the data_dst folder should have folder named aligned and the extracted frames from the data_dst movie together  
 
 Extract Faces,align the landmarks from the src 
 The next script has 2 options:  
@@ -276,8 +285,12 @@ When finished, the data_dst folder should have a folder named aligned with the e
 
 Training
 
+There are 2 methods for training:  
 
 
+```sh
+./6_train_Quick96.sh
+```
 
 
 
