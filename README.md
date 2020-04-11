@@ -149,6 +149,8 @@ TRAIN:
 MERGE:  
 7_merge_Quick96.sh  
 7_merge_SAEHD.sh  
+
+CONVERT TO VIDEO:
 8_merged_to_avi.sh  
 8_merged_to_mov_lossless.sh  
 8_merged_to_mp4_lossless.sh  
@@ -283,19 +285,38 @@ Choose 4 if you don't know what to choose
 
 When finished, the data_dst folder should have a folder named aligned with the extracted faces from the data_dst frames inside  
 
-Training
 
+TRAINING  
+  
 There are 2 methods for training:  
-
-
+6_train_Quick96.sh - one option -> cpu/gpu  
+6_train_SAEHD.sh - many options    
+  
 ```sh
 ./6_train_Quick96.sh
 ```
+  
+  
+MERGING  
 
+There are 2 methods for merging:  
+7_merge_Quick96.sh  
+7_merge_SAEHD.sh  
 
+```SH
+./7_merge_Quick96.sh
+```
 
+CONVERSION
+There are 4 methods for converging:
+8_merged_to_avi.sh  
+8_merged_to_mov_lossless.sh  
+8_merged_to_mp4_lossless.sh  
+8_merged_to_mp4.sh 
 
-
+```sh
+./8_merged_to_mp4.sh 
+```
 
 
 
