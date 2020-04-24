@@ -313,6 +313,9 @@ There are 4 methods for converging:
 8_merged_to_mov_lossless.sh  
 8_merged_to_mp4_lossless.sh  
 8_merged_to_mp4.sh 
+  
+The next script has 1 option:  
+bitrate - 16 is suggested  
 
 ```sh
 ./8_merged_to_mp4.sh 
