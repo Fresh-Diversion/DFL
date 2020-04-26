@@ -295,7 +295,10 @@ There are 2 methods for training:
 ```sh
 ./6_train_Quick96.sh
 ```
-  
+
+The longer the training, the better
+when finished - around 150000 iterations
+press ctrl + c in the terminal to quit
   
 MERGING  
 
